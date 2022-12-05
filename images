@@ -1,0 +1,1116 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 11, 2021 at 09:00 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `primax`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
+
+CREATE TABLE `account` (
+  `sn` int(11) NOT NULL,
+  `fname` text NOT NULL,
+  `lname` varchar(200) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `pass` varchar(120) NOT NULL,
+  `tel` varchar(15) NOT NULL,
+  `member_id` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`sn`, `fname`, `lname`, `email`, `pass`, `tel`, `member_id`) VALUES
+(22, 'Akorede', 'Ahmad', 'abiola610@yahoo.com', '97793da2016a658092c23573541c6ac2', '08054659872', 'MO-7547135'),
+(23, 'Akorede', 'Ahmad', 'ahmad@articulatetc.com', '52fb73872f43bca8997114b07211f53b', '8054659872', 'MO-1314190');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accountsetup`
+--
+
+CREATE TABLE `accountsetup` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `orgName` varchar(500) NOT NULL,
+  `urName` varchar(500) NOT NULL,
+  `urEmail` varchar(250) NOT NULL,
+  `urTel` varchar(15) NOT NULL,
+  `urUsername` varchar(500) NOT NULL,
+  `urPword` varchar(500) NOT NULL,
+  `terms` varchar(50) NOT NULL,
+  `regDate` date NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `accountsetup`
+--
+
+INSERT INTO `accountsetup` (`sn`, `coopID`, `orgName`, `urName`, `urEmail`, `urTel`, `urUsername`, `urPword`, `terms`, `regDate`, `status`) VALUES
+(8, '201189', 'UHMC Social Welfare Program', 'Mathias oni', 'malabioni@gmail.com', '4432489612', 'uhmc 2', '7551d6ac08904e098d5da39d01c48063', 'Agree', '2020-04-15', 'Free'),
+(7, '649382', 'ES Coop', 'Femi', 'Ishola', '08186176198', 'esscoop2', '65e77832da85bc5ffab4dd1c904afb9c', 'Agree', '2020-04-06', 'Free'),
+(6, '782119', 'Voizekonnect', 'Tunji', 'tunjinet@gmail.com', '08099444655', 'tunjinet2', '5ac7315f7486b9cea411ec530dc16a49', 'Agree', '2020-04-05', 'Free'),
+(5, '968458', 'Bizleads Mcrofinance Bank', 'Ahmad AKorede', 'info@primax.com.ng', '08054659872', 'cordova', '97793da2016a658092c23573541c6ac2', 'Agree', '2020-03-31', 'Free'),
+(9, '934848', 'Flash Money', 'Shema', 'jamesshema1@gmail.com', '08187798227', 'Shema2', '627c75a9b68ced78bff76855f5cf51b6', 'Agree', '2020-05-09', 'Free'),
+(10, '216270', 'Apploid Group', 'Lawal Rasak', 'apploidweb@outlook.com', '08025413041', 'apploidweb', '0dd70f52a659b6c2e282654ab84d184a', 'Agree', '2020-05-28', 'Free'),
+(11, '652910', 'JEVOLON RESOURCES', 'Justina', 'getjustina@gmail.com', '08188399656', 'Jilontuman', '1948f551ffce320ce96f4836cb6e7b25', 'Agree', '2020-05-28', 'Free'),
+(12, '667901', 'Modket Finance Company', 'Modupe  Adegbamiye', 'Modupe2@live.co.uk', '009447852499143', 'Modupe422', '6a2af4ca0e90f7e9670f7159ff036928', 'Agree', '2020-05-29', 'Free'),
+(13, '574465', 'OK snappy', 'Okeyemi', 'okeyemidaniel@gmail.com', '08037491697', 'Oksnappy', 'bbec20827fed9333bd98321f567d78ee', 'Agree', '2020-06-10', 'Free'),
+(14, '855921', 'Abuja Leasing company', 'Bariadbruk Nuhu', 'bariadbruk.nuhu@abujaleasing.com', '08063242014', 'bruks', 'e59c1839079cd93403c7355cef2edeb8', 'Agree', '2020-06-10', 'Free'),
+(15, '958786', 'Benex', 'atolagbe Ayanshola', 'atolagbeayanshola@gmail.com', '08038550676', 'Bennex', '6d66ac35cda484c9d269743589af296d', 'Agree', '2020-06-10', 'Free'),
+(16, '418460', 'Primax Leasing Company', 'Muhibah', 'muhibah.akorede@gmail.com', '07054659877', 'muhibah', '97793da2016a658092c23573541c6ac2', 'Agree', '2020-06-11', 'Free'),
+(17, '336181', 'Articulate Technologies Concept', 'Akorede Ahmad', 'ahmad@artic233ulatetc.com', '+23418054652349', 'muhibah2', 'b51a0ff9fbc2941dd41e4b5f52d6213d', 'Agree', '2020-12-26', 'Free');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account_type`
+--
+
+CREATE TABLE `account_type` (
+  `sn` int(11) NOT NULL,
+  `coopID` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `payment_method` varchar(20) DEFAULT NULL,
+  `amount_paid` bigint(20) DEFAULT NULL,
+  `savingsProduct` varchar(250) DEFAULT NULL,
+  `member_id` varchar(11) NOT NULL,
+  `depositor` varchar(50) DEFAULT NULL,
+  `collected_by` varchar(50) DEFAULT NULL,
+  `transaction_type` varchar(20) NOT NULL,
+  `teller_no` varchar(100) NOT NULL,
+  `narration` varchar(500) NOT NULL,
+  `depositor_phone` varchar(20) NOT NULL,
+  `received_by` varchar(100) DEFAULT NULL,
+  `amount_withdrawn` bigint(20) DEFAULT NULL,
+  `date_received` date DEFAULT NULL,
+  `authorized_by` varchar(50) DEFAULT NULL,
+  `balance` bigint(20) DEFAULT NULL,
+  `branch` varchar(250) DEFAULT NULL,
+  `chequeNo` varchar(100) NOT NULL,
+  `chequeName` varchar(500) NOT NULL,
+  `o_bank` varchar(500) NOT NULL,
+  `payee_addy` varchar(500) NOT NULL,
+  `payee_no` varchar(500) NOT NULL,
+  `payeeM` varchar(500) NOT NULL,
+  `id_no` varchar(500) NOT NULL,
+  `upload_id` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `account_type`
+--
+
+INSERT INTO `account_type` (`sn`, `coopID`, `date`, `firstName`, `lastName`, `payment_method`, `amount_paid`, `savingsProduct`, `member_id`, `depositor`, `collected_by`, `transaction_type`, `teller_no`, `narration`, `depositor_phone`, `received_by`, `amount_withdrawn`, `date_received`, `authorized_by`, `balance`, `branch`, `chequeNo`, `chequeName`, `o_bank`, `payee_addy`, `payee_no`, `payeeM`, `id_no`, `upload_id`) VALUES
+(17, 418460, '2020-12-08', 'Akorede', 'Ahmad', NULL, 3400000, NULL, '113', 'Akorede', NULL, 'Deposit', '123', 'Gift for the project', '+23418054659872', NULL, NULL, '2020-12-19', 'muhibah', 0, 'Ikeja', '', '', '', '', '', '', '', ''),
+(18, 418460, '2020-12-09', 'Akorede', 'Ahmad', NULL, 3400000, NULL, '113', 'Akorede', NULL, 'Deposit', '123', 'Gift for the project', '+23418054659872', NULL, NULL, '2020-12-19', 'muhibah', 6800000, 'Ikeja', '', '', '', '', '', '', '', ''),
+(19, 418460, '2020-12-17', 'Fagbohunka', 'Funmilayo', NULL, 84500, NULL, '501300517', 'Blessed Scholar School', NULL, 'Deposit', '65432', 'Investment', '+23418054659872', NULL, NULL, '2020-12-19', 'muhibah', 0, 'Ikeja', '', '', '', '', '', '', '', ''),
+(20, 418460, '2020-12-15', 'Fagbohunka', 'Funmilayo', NULL, 890900, NULL, '501300517', 'Baker', NULL, 'Deposit', '23421', 'Investment Package', '+23418054659872', NULL, NULL, '2020-12-19', 'muhibah', 975400, 'Ikeja', '', '', '', '', '', '', '', ''),
+(21, 418460, '2020-12-15', 'Frederick', 'Gift', NULL, 10222209, NULL, '5013006196', 'Director of Works', NULL, 'Deposit', '123', 'Instruction from above', '08056789876', NULL, NULL, '2020-12-18', 'muhibah', 0, 'Ikeja', '', '', '', '', '', '', '', ''),
+(22, 418460, '2020-12-22', 'Frederick', 'Gift', NULL, 8000, NULL, '5013006196', '', NULL, 'Cheque Deposit', '', 'Termly payment', '', NULL, NULL, '2020-12-18', 'muhibah', 10230209, 'Ikeja', '', '', '', '', '', '', '', ''),
+(23, 418460, '2020-12-20', 'Frederick', 'Gift', NULL, 8000, NULL, '5013006196', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'Termly payment', '', NULL, NULL, '2020-12-18', 'muhibah', 10238209, 'Ikeja', '301140232', '', '', '', '', '', '', ''),
+(24, 418460, '2020-12-14', 'Frederick', 'Gift', NULL, 8000, NULL, '5013006196', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'Termly payment', '', NULL, NULL, '2020-12-18', 'muhibah', 10246209, 'Ikeja', '301140232', '', '', '', '', '', '', ''),
+(25, 418460, '2020-12-19', 'Frederick', 'Gift', NULL, 8000, NULL, '5013006196', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'Termly payment', '', NULL, NULL, '2020-12-18', 'muhibah', 10254209, 'Ikeja', '301140232', '', '', '', '', '', '', ''),
+(26, 418460, '2020-12-14', 'Frederick', 'Gift', NULL, 8000, NULL, '5013006196', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'Termly payment', '', NULL, NULL, '2020-12-18', 'muhibah', 10262209, 'Ikeja', '301140232', '', '', '', '', '', '', ''),
+(27, 418460, '2020-12-20', 'Frederick', 'Gift', NULL, 8000, NULL, '5013006196', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'Termly payment', '', NULL, NULL, '2020-12-18', 'muhibah', 10270209, 'Ikeja', '301140232', '', 'Jaiz Bank', '', '', '', '', ''),
+(28, 418460, '2020-12-20', 'Akorede', 'Ahmad', NULL, 2147483647, NULL, '113', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'School Investment Deposit', '', NULL, NULL, '2020-12-19', 'muhibah', 2147483647, 'Ikeja', '0002321569', '', 'Jaiz Bank', '', '', '', '', ''),
+(29, 418460, '0000-00-00', 'Akorede', 'Ahmad', NULL, 3400000000, NULL, '113', 'Blessed Scholars School', NULL, 'Cheque Deposit', '', 'School Investment Deposit', '', NULL, NULL, '2020-12-19', 'muhibah', 5554283647, 'Ikeja', '0002321569', '', 'Jaiz Bank', '', '', '', '', ''),
+(30, 418460, '2020-12-13', 'Akorede', 'Ahmad', NULL, NULL, NULL, '113', NULL, NULL, 'Cheque Withdrawal', '', '', '', 'Muhiba Akorede', -8000, '2020-12-19', 'muhibah', 5554275647, 'Ikeja', '09987544', 'Akorede Ahmad', '', '161, Herbert Macaulay Way,', '07054659877', 'International Passport', '12344', 'WhatsApp Image 2020-12-17 at 12.36.02 AM.jpeg'),
+(31, 418460, '2020-12-19', 'Akorede', 'Ahmad', NULL, NULL, NULL, '113', NULL, NULL, 'Cheque Withdrawal', '', '', '', 'Muhiba Akorede', -8000, '2020-12-19', 'muhibah', 5554283647, 'Ikeja', '09987544', 'Akorede Ahmad', '', '161, Herbert Macaulay Way,', '07054659877', 'International Passport', '12344', 'WhatsApp Image 2020-12-17 at 12.36.02 AM.jpeg'),
+(32, 418460, '2020-12-18', 'Akorede', 'Ahmad', NULL, NULL, NULL, '113', NULL, NULL, 'Cheque Withdrawal', '', '', '', 'Muhiba Akorede', -8000, '2020-12-19', 'muhibah', 5554291647, 'Ikeja', '09987544', 'Akorede Ahmad', '', '161, Herbert Macaulay Way,', '07054659877', 'International Passport', '12344', 'WhatsApp Image 2020-12-17 at 12.36.02 AM.jpeg'),
+(33, 418460, '2020-12-18', 'Akorede', 'Ahmad', NULL, NULL, NULL, '113', NULL, NULL, 'Cheque Withdrawal', '', '', '', 'Muhiba Akorede', -8000, '2020-12-19', 'muhibah', 5554299647, 'Ikeja', '09987544', 'Akorede Ahmad', '', '161, Herbert Macaulay Way,', '07054659877', 'International Passport', '12344', 'WhatsApp Image 2020-12-17 at 12.36.02 AM.jpeg'),
+(34, 418460, '2020-12-20', 'Fagbohunka', 'Funmilayo', NULL, NULL, NULL, '501300517', NULL, NULL, 'Cheque Withdrawal', '', '', '', 'Muhiba Akorede', -900, '2020-12-20', 'muhibah', 974500, 'Ikeja', '09987544', 'Akorede Ahmad', '', '161, Herbert Macaulay Way', '+23418054659872', 'National Identity Card', '12344', 'WhatsApp Image 2020-12-17 at 12.36.02 AM (1).jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `add_staff`
+--
+
+CREATE TABLE `add_staff` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `branch` varchar(250) NOT NULL,
+  `staff_id` varchar(100) NOT NULL,
+  `firstName` varchar(200) NOT NULL,
+  `lastName` varchar(200) NOT NULL,
+  `doe` date NOT NULL,
+  `salary` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `telephone` varchar(20) NOT NULL,
+  `registered_by` varchar(50) NOT NULL,
+  `date_registered` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add_staff`
+--
+
+INSERT INTO `add_staff` (`sn`, `coopID`, `branch`, `staff_id`, `firstName`, `lastName`, `doe`, `salary`, `email`, `telephone`, `registered_by`, `date_registered`) VALUES
+(1, '', '', '001', 'Ayinla', 'Abiola', '2019-06-22', 100000, 'articulatetc@gmail.com', '0090090090', 'sysadmin', '2019-06-30'),
+(2, '', '', '002', 'Wunmi', 'Adewale', '2019-06-01', 50000, 'abiola610@yahoo.com', '09090', 'sysadmin', '2019-06-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `audit_log`
+--
+
+CREATE TABLE `audit_log` (
+  `sn` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `user` varchar(300) NOT NULL,
+  `details` varchar(4000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `branch`
+--
+
+CREATE TABLE `branch` (
+  `bID` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `branchName` varchar(50) NOT NULL,
+  `branchAddress` varchar(200) NOT NULL,
+  `branchEmail` varchar(50) NOT NULL,
+  `branchPhone` varchar(20) NOT NULL,
+  `branchOfficer` varchar(50) NOT NULL,
+  `branchID` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `branch`
+--
+
+INSERT INTO `branch` (`bID`, `coopID`, `branchName`, `branchAddress`, `branchEmail`, `branchPhone`, `branchOfficer`, `branchID`) VALUES
+(6, '762816', 'lagos', 'Ilasamaja', 'ila@sdr.cbn', '08063405092', 'primax', '787'),
+(8, '418460', 'Ikeja', '161, Herbert Macaulay Way,', 'ahmad@articulatetc.com', '8054659872', 'muhibah', '009');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chart_of_account`
+--
+
+CREATE TABLE `chart_of_account` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `name` varchar(500) NOT NULL,
+  `gl_code` varchar(100) NOT NULL,
+  `type` varchar(300) NOT NULL,
+  `notes` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `chart_of_account`
+--
+
+INSERT INTO `chart_of_account` (`sn`, `coopID`, `name`, `gl_code`, `type`, `notes`) VALUES
+(1, '418460', 'Contribution', '100', 'Equity', 'Made by owners'),
+(2, '418460', 'Dividends', '110', 'Equity', 'Dividends'),
+(3, '418460', 'Office Expenses', '120', 'Expenses', 'Direct Expenses'),
+(4, '418460', 'Computer Expenses', '1001', 'Expenses', 'Computer Expenses'),
+(5, '418460', 'Loan Interest', '121', 'Equity', 'A'),
+(6, '418460', 'Donation', '212', 'Revenues', 'Donation'),
+(7, '418460', 'Interest Income', '1011', 'Revenues', 'Income Interest'),
+(8, '418460', 'Interest on Overdraft', '1012', 'Revenues', 'Overdraft Interest'),
+(9, '418460', 'Interest from Loan', '1013', 'Revenues', 'Loan Interest'),
+(10, '418460', 'Income on Cheque Book', '1014', 'Revenues', 'Cheque Book'),
+(11, '418460', 'Admin Charges', '0012', 'Revenues', 'Admin charges'),
+(12, '418460', 'Income on Passbook', '0013', 'Revenues', 'Passbook charges'),
+(13, '418460', 'Processing Fees', '0014', 'Revenues', 'Processing Fees'),
+(14, '418460', 'Management Fees', '0015', 'Revenues', 'Management Fees'),
+(15, '418460', 'SMS Alert Income', '0017', 'Revenues', 'SMS alert'),
+(16, '418460', 'Income Transfer charges', '0020', 'Revenues', 'Transfer Charge'),
+(17, '418460', 'Income on Account Statement', '0021', 'Revenues', 'Account Statement'),
+(18, '418460', 'Application Form Fees', '0030', 'Revenues', 'Application Form'),
+(19, '418460', 'Insurance', '0120', 'Revenues', 'Insurance'),
+(20, '418460', 'Legal Fees', '0039', 'Revenues', 'Legal Fees'),
+(21, '418460', 'Bank Charges', '2210', 'Expenses', 'Bank Charges'),
+(22, '418460', 'Interest Paid on Savings', '2200', 'Expenses', 'Paid on savings'),
+(23, '418460', 'Interest Paid on Fixed Deposit', '2212', 'Expenses', 'Paid on Fixed deposit'),
+(24, '418460', 'Staff Salary', '3300', 'Expenses', 'Staff Salary');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `finance`
+--
+
+CREATE TABLE `finance` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `chart` varchar(100) NOT NULL,
+  `chart_cat` varchar(100) NOT NULL,
+  `purpose` varchar(500) NOT NULL,
+  `date` date NOT NULL,
+  `description` varchar(800) NOT NULL,
+  `credit_amount` bigint(20) NOT NULL,
+  `debit_amount` bigint(20) NOT NULL,
+  `balance` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `finance`
+--
+
+INSERT INTO `finance` (`sn`, `coopID`, `chart`, `chart_cat`, `purpose`, `date`, `description`, `credit_amount`, `debit_amount`, `balance`) VALUES
+(7, '418460', 'Expenses', 'Donation', 'Asset', '2020-12-16', 'Asset', 0, 800, 5600),
+(11, '418460', 'Revenues', 'Admin Charges', 'Account Opening Charges', '2020-12-18', 'Account Opening', 8000, 0, 222500),
+(12, '418460', 'Revenues', 'SMS Alert Income', 'SMS Alert', '2020-12-18', 'SMS alert', 700, 0, 223200),
+(13, '418460', 'Expenses', 'Interest Paid on Savings', 'paid on interest', '2020-12-18', 'Paid', 0, 8000, 231200),
+(14, '418460', 'Expenses', 'Staff Salary', 'Staff Salary', '2020-12-18', 'Staff Salary', 0, 34500000, 34731200),
+(15, '418460', 'Revenues', 'SMS Alert Income', 'SMS Alert', '2020-12-18', 'SMS Alert', 8000, 0, 34525500),
+(16, '418460', 'Revenues', 'SMS Alert Income', 'SMS Alert', '2020-12-18', 'End of month message charges', 700, 0, 34526200),
+(17, '418460', 'Revenues', 'Admin Charges', 'Account Maintenance Charge', '2020-12-18', 'Account Maintenance Charges', 800, 0, 34527000),
+(18, '418460', 'Revenues', 'Admin Charges', 'Opening balance', '2020-12-18', 'Admin charge', 800, 0, 34527800),
+(19, '418460', 'Revenues', 'Income on Passbook', 'Passbook', '2020-12-17', 'Passbook payment', 8000, 0, 34535800),
+(20, '418460', 'Revenues', 'Income on Passbook', 'Passbook', '2020-12-18', 'Passbook charges', 25000, 0, 34560800);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gl`
+--
+
+CREATE TABLE `gl` (
+  `account_no` int(250) NOT NULL,
+  `acount_name` varchar(500) NOT NULL,
+  `acct_type` int(11) NOT NULL,
+  `date_entered` date NOT NULL,
+  `LMD` date NOT NULL,
+  `debits` int(11) NOT NULL,
+  `credits` int(11) NOT NULL,
+  `generated_by` varchar(50) NOT NULL,
+  `address` varchar(200) NOT NULL,
+  `marketer` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groupaccount`
+--
+
+CREATE TABLE `groupaccount` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `gID` varchar(100) NOT NULL,
+  `gname` varchar(100) NOT NULL,
+  `gaddress` varchar(250) NOT NULL,
+  `gemail` varchar(100) NOT NULL,
+  `gtel` varchar(15) NOT NULL,
+  `branch` varchar(100) NOT NULL,
+  `aHolderName1` text NOT NULL,
+  `aHolderID1` varchar(100) NOT NULL,
+  `aHolderName2` text NOT NULL,
+  `aHolderID2` varchar(100) NOT NULL,
+  `aHolderName3` text NOT NULL,
+  `aHolderID3` varchar(100) NOT NULL,
+  `registrar` varchar(100) NOT NULL,
+  `date` date NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `groupaccount`
+--
+
+INSERT INTO `groupaccount` (`sn`, `coopID`, `gID`, `gname`, `gaddress`, `gemail`, `gtel`, `branch`, `aHolderName1`, `aHolderID1`, `aHolderName2`, `aHolderID2`, `aHolderName3`, `aHolderID3`, `registrar`, `date`) VALUES
+(1, '', '740093', 'Islah Group', '', 'islah@islah.com', '090787878', 'Ikeja', 'Akorede', '001', 'Abiola', '002', 'Ayinla', '003', 'articula', '2019-06-16'),
+(2, '', '372715', 'ArtWallet', 'Lagos', 'artwallet@demo.com', '09087878787', 'Ikeja', 'Akorede', '67876', 'Abiola', '002', 'Ayinla', '003', 'sysadmin', '2019-06-30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loanapplications`
+--
+
+CREATE TABLE `loanapplications` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `loan_product` varchar(500) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `middleName` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `member_id` varchar(11) NOT NULL,
+  `loanAmount` int(11) NOT NULL,
+  `markup` int(11) NOT NULL,
+  `loan_aggregate` int(11) NOT NULL,
+  `monthlyRepayment` int(11) NOT NULL,
+  `purpose` text NOT NULL,
+  `applicationDate` date NOT NULL,
+  `collectionMethod` varchar(150) NOT NULL,
+  `repaymentPeriod` varchar(50) NOT NULL,
+  `guarantor` varchar(50) NOT NULL,
+  `gemail` varchar(50) NOT NULL,
+  `gnumber` varchar(20) NOT NULL,
+  `dateRecorded` date NOT NULL,
+  `status` text NOT NULL,
+  `amountRepaid` int(11) NOT NULL,
+  `repaidMethod` varchar(100) NOT NULL,
+  `dateRepaid` date NOT NULL,
+  `balance` int(11) NOT NULL,
+  `narration` varchar(1200) NOT NULL,
+  `branch` varchar(500) NOT NULL,
+  `staff` varchar(50) NOT NULL,
+  `approvedby` varchar(500) NOT NULL,
+  `disbursedby` varchar(500) NOT NULL,
+  `rejectedby` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `loanapplications`
+--
+
+INSERT INTO `loanapplications` (`sn`, `coopID`, `loan_product`, `firstName`, `lastName`, `middleName`, `email`, `member_id`, `loanAmount`, `markup`, `loan_aggregate`, `monthlyRepayment`, `purpose`, `applicationDate`, `collectionMethod`, `repaymentPeriod`, `guarantor`, `gemail`, `gnumber`, `dateRecorded`, `status`, `amountRepaid`, `repaidMethod`, `dateRepaid`, `balance`, `narration`, `branch`, `staff`, `approvedby`, `disbursedby`, `rejectedby`) VALUES
+(14, '762816', '', 'Ahmad', 'Akorede', 'A', '', '0123', 23000, 2, 23460, 0, '', '2020-03-11', '', '1', '', '', '', '2020-03-18', 'Rejected', 0, '', '0000-00-00', 0, '', '', '', '', '', 'primax'),
+(15, '762816', '', 'Ahmad', 'Akorede', 'A', '', '0123', 230000, 0, 236900, 0, '', '2020-03-18', '', '6', '', '', '', '2020-03-18', 'Pending', 0, '', '0000-00-00', 0, 'First loan for the year                               ', 'Amoyo', '', '', '', ''),
+(16, '762816', '', 'Ahmad', 'Akorede', 'A', '', '0123', 1200000, 12, 1344000, 0, '', '2020-03-18', '', '6', '', '', '', '2020-03-18', 'Approved', 0, '', '0000-00-00', 0, 'Hoouse building purchase                               ', 'lagos', 'primax', 'primax', '', ''),
+(17, '762816', '', 'Ahmad', 'Akorede', 'A', 'aabiola610@gmail.com', '0123', 0, 0, 0, 0, '', '0000-00-00', '', '', '', '', '', '0000-00-00', '', 450000, 'Bank Deposit', '2020-03-25', 0, '', 'Amoyo', 'primax', '', '', ''),
+(18, '762816', '', 'Ahmad', 'Akorede', 'A', 'aabiola610@gmail.com', '0123', 0, 0, 0, 0, '', '0000-00-00', '', '', '', '', '', '0000-00-00', '', 78000, 'Bank Deposit', '2020-03-25', 0, '', 'Amoyo', 'primax', '', '', ''),
+(19, '418460', '', 'Akorede', 'Ahmad', 'A', '', '113', 7800, 3, 8034, 0, '', '2020-06-13', '', '6', '', '', '', '2020-06-14', 'Rejected', 0, '', '0000-00-00', 0, 'hgh                               ', 'Ikeja', 'muhibah', '', '', 'muhibah'),
+(20, '418460', '', 'Akorede', 'Ahmad', 'A', '', '113', 12000, 10, 13200, 0, '', '2020-06-13', '', '6', '', '', '', '2020-06-14', 'Approved', 0, '', '0000-00-00', 0, 'For housing                               ', 'Ikeja', 'muhibah', 'muhibah', '', ''),
+(21, '418460', '', 'Akorede', 'Ahmad', 'A', 'ahmad@articulatetc.com', '113', 0, 0, 0, 0, '', '0000-00-00', '', '', '', '', '', '0000-00-00', 'Approved', 10000, 'Check Payment', '2020-06-14', 0, '', 'Ikeja', 'muhibah', 'muhibah', '', ''),
+(22, '418460', '', 'Akorede', 'Ahmad', 'A', '', '113', 890000, 3, 916700, 0, '', '2021-03-26', '', '6', '', '', '', '2021-03-26', 'Pending', 0, '', '0000-00-00', 0, '                               ', 'Asset Financing Loan', 'muhibah', '', '', ''),
+(23, '', '', 'Mopelola', 'Ajani', '', '', 'mo6869738', 500000, 5, 0, 0, '', '2021-04-14', '', '12', '', '', '', '2021-04-14', 'Pending', 0, '', '0000-00-00', 0, 'Just', '', '', '', '', ''),
+(24, '', '', 'Mopelola', 'Ajani', '', '', 'mo6869738', 780000, 5, 0, 0, '', '2021-04-15', '', '12', '', '', '', '2021-04-15', 'Pending', 0, '', '0000-00-00', 0, 'me', '', '', '', '', ''),
+(25, '', '', 'Mopelola', 'Ajani', '', '', 'mo6869738', 67000, 5, 0, 0, '', '2021-04-15', '', '12', '', '', '', '2021-04-15', 'Pending', 0, '', '0000-00-00', 0, 'me', '', '', '', '', ''),
+(26, '', '', 'Mopelola', 'Ajani', '', '', 'mo6869738', 150000, 5, 157500, 0, '', '2021-04-15', '', '13125', '', '', '', '2021-04-15', 'Pending', 0, '', '0000-00-00', 0, 'me                               ', '', '', '', '', ''),
+(27, '', '', 'Mopelola', 'Ajani', '', '', 'mo6869738', 1200000, 5, 1260000, 0, '', '2021-04-15', '', '105000', '', '', '', '2021-04-15', 'Pending', 0, '', '0000-00-00', 0, 'HOusing                               ', '', '', '', '', ''),
+(28, '', '', 'Akorede', 'Ahmad', '', '', 'MO-7547135', 1000000, 5, 1050000, 87500, '', '2021-04-28', '', '12', '', '', '', '2021-04-17', 'Pending', 0, '', '0000-00-00', 0, '10                               ', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loanproducts`
+--
+
+CREATE TABLE `loanproducts` (
+  `id` int(11) NOT NULL,
+  `productName` varchar(100) NOT NULL,
+  `minimum` int(11) NOT NULL,
+  `maximum` int(11) NOT NULL,
+  `repayPeriod` varchar(100) NOT NULL,
+  `markup` int(11) NOT NULL,
+  `prorated` varchar(100) NOT NULL,
+  `calculation_method` varchar(100) NOT NULL,
+  `naration` varchar(900) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member_registration`
+--
+
+CREATE TABLE `member_registration` (
+  `sn` int(11) NOT NULL,
+  `firstName` varchar(100) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `middleName` varchar(100) NOT NULL,
+  `gender` text NOT NULL,
+  `bday` date NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tel` varchar(20) NOT NULL,
+  `address` varchar(120) NOT NULL,
+  `member_id` varchar(10) NOT NULL,
+  `date` date NOT NULL,
+  `registrar` varchar(50) NOT NULL,
+  `occupation` varchar(50) NOT NULL,
+  `bvn` int(15) NOT NULL,
+  `passport` int(11) NOT NULL,
+  `utility` int(11) NOT NULL,
+  `bank` int(11) NOT NULL,
+  `a_name` int(11) NOT NULL,
+  `a_number` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `member_registration`
+--
+
+INSERT INTO `member_registration` (`sn`, `firstName`, `lastName`, `middleName`, `gender`, `bday`, `email`, `tel`, `address`, `member_id`, `date`, `registrar`, `occupation`, `bvn`, `passport`, `utility`, `bank`, `a_name`, `a_number`) VALUES
+(257, 'Ahmad', 'Akorede', '', 'male', '2017-04-05', 'articulatetc@gmail.com', '', 'ganmo', '112', '2019-06-30', 'sysadmin', 'Tailoring', 0, 0, 0, 0, 0, ''),
+(258, 'Sami', 'Abdul', '', 'male', '2019-10-04', 'sami@gmail.com', '08034343434', 'Lagos', '113', '2019-10-04', '', 'Teaching', 0, 0, 0, 0, 0, ''),
+(259, 'Ahmad', 'Akorede', '', 'male', '2019-10-24', 'aabiola610@gmail.com', '08059202069', 'Ogun State', '0123', '2019-10-25', '', 'Teaching', 0, 0, 0, 0, 0, ''),
+(261, 'Akorede', 'Ahmad', '', 'female', '2020-06-04', 'ahmad@articulatetc.com', '8054659872', '161, Herbert Macaulay Way,', '113', '2020-06-13', 'muhibah', 'Tailoring', 0, 0, 0, 0, 0, ''),
+(265, 'Fagbohunka', 'Funmilayo', '', 'female', '2020-12-16', 'fasgbo@yahoo.com', '+234908754123', 'Akure, Igbogbo Area', '501300517', '2020-12-19', 'muhibah', 'Self Employed', 0, 0, 0, 0, 0, ''),
+(267, 'Yinka', 'Akinnirun', '', 'male', '2020-12-03', 'yinka@aye.com.ng', '+2349321112212', 'Akure, Igbogbo Area', '5013000265', '2020-12-19', 'muhibah', 'Pofessional Fashion Designer', 0, 0, 0, 0, 0, ''),
+(268, 'Mopelola', 'Ajani', '', 'male', '2021-04-07', 'ajani@yahoo.com', '08063405092', '161, Herbert Macaulay Way,', 'mo6869738', '2021-04-14', '', 'Teaching', 2147483647, 0, 0, 0, 0, '0010932646'),
+(269, 'Akorede', 'Ahmad', '', 'male', '2021-04-15', 'info@islamgen.com', '08011111111111', '161, Herbert Macaulay Way,', 'MO-4110876', '2021-04-15', '', 'Teaching', 2147483647, 0, 0, 0, 0, '0010932646'),
+(270, 'Akorede', 'Ahmad', '', 'male', '2021-04-16', 'abiola610@yahoo.com', '08054659872', '161, Herbert Macaulay Way,', 'MO-7547135', '2021-04-17', '', 'Tailoring', 2147483647, 0, 0, 0, 0, '0010932646'),
+(271, 'Akorede', 'Ahmad', '890098', 'male', '2021-04-18', 'articulatetc@gmail.com.ng', '+234180546590000', 'momoney logo.jpeg', '0989009', '2021-04-18', 'muhibah', 'Teaching', 0, 0, 0, 0, 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `new_loan_product`
+--
+
+CREATE TABLE `new_loan_product` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `product_name` varchar(50) NOT NULL,
+  `minimum_amount` int(11) NOT NULL,
+  `maximum_amount` int(11) NOT NULL,
+  `repayment_period` varchar(50) NOT NULL,
+  `interest` varchar(11) NOT NULL,
+  `requirement` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `new_loan_product`
+--
+
+INSERT INTO `new_loan_product` (`sn`, `coopID`, `product_name`, `minimum_amount`, `maximum_amount`, `repayment_period`, `interest`, `requirement`) VALUES
+(1, '', 'Shap Shap Loan', 50000, 150000, '6 month', '2', '6 month membership'),
+(2, '', 'Student Loan', 200000, 500000, '12', '3', '6 month membership'),
+(3, '822675', 'Asset Financing', 120000, 1000000, '18 month', '1', 'Guarantor'),
+(4, '762816', 'Sharp Sharp Loan', 50000, 100000, '6 month', '2', 'Anything'),
+(5, '667901', 'htd', 567, 1000, '6months', '10', ''),
+(6, '418460', 'Asset Financing Loan', 50000, 200000, '6 month', '1', ''),
+(7, '418460', 'Festive Savings', 90, 6758, '8', '2', 'good'),
+(8, '418460', 'Target Savings', 100000, 500000, '3', '3', 'This loan is targeted at those who are on regular '),
+(9, '418460', '', 0, 120000, '12', '4', ''),
+(10, '418460', 'Group Loan 2', 100000, 500000, '8', '9', 'mn'),
+(11, '418460', 'Target Savings M', 1222, 333333, '6', '4', 'm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `other_income`
+--
+
+CREATE TABLE `other_income` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `purpose` varchar(50) NOT NULL,
+  `amount` int(10) NOT NULL,
+  `payment_method` varchar(20) NOT NULL,
+  `date` date NOT NULL,
+  `paid_by` text NOT NULL,
+  `staff_in_charge` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `other_income`
+--
+
+INSERT INTO `other_income` (`sn`, `coopID`, `purpose`, `amount`, `payment_method`, `date`, `paid_by`, `staff_in_charge`) VALUES
+(1, '', 'Endowment', 40000, 'Cash Deposit', '2018-03-29', 'My Hamzah', ''),
+(2, '', 'Uniform', 13000, 'Bank Deposit', '2018-04-17', 'Alh Akorede', ''),
+(3, '', 'School Fees', 100000, 'Internet Transfer', '2018-04-04', 'Alh Akorede', ''),
+(4, '', 'School Bus Purchase', 240000, 'Cash Payment', '2018-04-19', 'Mr Dan', ''),
+(5, '', 'Transport Fare', 20000, 'Bank Deposit', '2018-04-20', 'Mrs Muhibi', ''),
+(6, '', 'Uniform', 120000, 'Bank Deposit', '2018-04-19', 'Mummy Wale', 'Admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payroll`
+--
+
+CREATE TABLE `payroll` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(500) NOT NULL,
+  `branch` varchar(250) NOT NULL,
+  `staff_id` varchar(200) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(100) NOT NULL,
+  `month` varchar(35) NOT NULL,
+  `year` varchar(5) NOT NULL,
+  `salary` int(11) NOT NULL,
+  `deduction` int(11) NOT NULL,
+  `r_deduction` varchar(500) NOT NULL,
+  `tax` int(11) NOT NULL,
+  `balance` int(11) NOT NULL,
+  `approved_by` varchar(500) NOT NULL,
+  `staff_incharge` varchar(500) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `savings`
+--
+
+CREATE TABLE `savings` (
+  `sn` int(11) NOT NULL,
+  `branch` varchar(100) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `oname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telephone` varchar(15) NOT NULL,
+  `member_id` varchar(50) NOT NULL,
+  `amount_paid` int(100) NOT NULL,
+  `payment_date` date NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(6) NOT NULL,
+  `paid_by` varchar(50) NOT NULL,
+  `narration` varchar(1000) NOT NULL,
+  `authorized_by` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `savingsproduct`
+--
+
+CREATE TABLE `savingsproduct` (
+  `pid` int(11) NOT NULL,
+  `coopID` varchar(100) NOT NULL,
+  `productName` varchar(100) NOT NULL,
+  `productID` varchar(50) NOT NULL,
+  `description` varchar(2000) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `savingsproduct`
+--
+
+INSERT INTO `savingsproduct` (`pid`, `coopID`, `productName`, `productID`, `description`) VALUES
+(1, '', 'Childs', '001', 'Here and not there'),
+(2, '', 'Target Savings', '002', 'This is for you'),
+(3, '', 'Direct Savings', '009', 'Test'),
+(4, '762816', 'Ileya Savings', '003', 'For eidul adha'),
+(5, '762816', 'Festive', '090', 'fetivity'),
+(6, '418460', 'Target Savings 2', '009', 'asd');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `session_log`
+--
+
+CREATE TABLE `session_log` (
+  `sn` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `user` varchar(40) NOT NULL,
+  `details` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `sn` int(11) NOT NULL,
+  `staff_id` varchar(10) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `employment_date` date NOT NULL,
+  `basic_salary` int(10) NOT NULL,
+  `allowances` int(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `tel_no` varchar(15) NOT NULL,
+  `account_no` int(10) NOT NULL,
+  `account_name` varchar(50) NOT NULL,
+  `bank` varchar(70) NOT NULL,
+  `registered_by` varchar(50) NOT NULL,
+  `date_registered` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`sn`, `staff_id`, `firstName`, `lastName`, `employment_date`, `basic_salary`, `allowances`, `email`, `tel_no`, `account_no`, `account_name`, `bank`, `registered_by`, `date_registered`) VALUES
+(1, '001', 'Ahmad', '', '2018-04-12', 50000, 30000, 'ahmad@articulatetc.com', '08054659872', 0, '', 'Guaranty Trust Bank', 'Akorede', '2018-04-14'),
+(2, '002', 'Fuad', 'Ayinla', '2018-07-03', 400000, 12000000, 'demo@demo.com', '123123', 2147483647, 'Fuad Ayinla', 'Fidelity', 'Me', '2018-07-04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `standingorder`
+--
+
+CREATE TABLE `standingorder` (
+  `sn` int(11) NOT NULL,
+  `coopID` varchar(50) NOT NULL,
+  `s_name` varchar(300) NOT NULL,
+  `frequency` varchar(20) NOT NULL,
+  `s_date` date NOT NULL,
+  `e_date` date NOT NULL,
+  `debit_account` int(11) NOT NULL,
+  `credit_account` int(11) NOT NULL,
+  `amount` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `standingorder`
+--
+
+INSERT INTO `standingorder` (`sn`, `coopID`, `s_name`, `frequency`, `s_date`, `e_date`, `debit_account`, `credit_account`, `amount`) VALUES
+(1, '418460', 'Nepa', 'Bi-weekly', '2020-12-08', '2020-12-31', 10932646, 10933715, 50000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teller`
+--
+
+CREATE TABLE `teller` (
+  `sn` int(11) NOT NULL,
+  `coopID` int(11) NOT NULL,
+  `t_uname` varchar(50) NOT NULL,
+  `t_id` varchar(10) NOT NULL,
+  `t_fname` varchar(50) NOT NULL,
+  `t_lname` varchar(50) NOT NULL,
+  `t_email` varchar(100) NOT NULL,
+  `t_phone` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `teller`
+--
+
+INSERT INTO `teller` (`sn`, `coopID`, `t_uname`, `t_id`, `t_fname`, `t_lname`, `t_email`, `t_phone`) VALUES
+(1, 418460, 'tname', '12', 'Ayinla', 'Abiola', 'abiola610@yahoo.com', '0805764321');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trans_log`
+--
+
+CREATE TABLE `trans_log` (
+  `date` date NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `details` varchar(250) NOT NULL,
+  `time` time NOT NULL,
+  `sn` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `trans_log`
+--
+
+INSERT INTO `trans_log` (`date`, `user`, `details`, `time`, `sn`) VALUES
+('2021-04-18', 'muhibah', 'muhibah added a new customer Akorede', '00:00:30', 1),
+('2021-04-18', '', 'muhibah added a new loan product - Target Savings M', '00:00:00', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_account`
+--
+
+CREATE TABLE `user_account` (
+  `sn` int(11) NOT NULL,
+  `coopID` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `firstName` text NOT NULL,
+  `lastName` text NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `tel` varchar(20) NOT NULL,
+  `user_role` varchar(50) NOT NULL,
+  `regDate` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_account`
+--
+
+INSERT INTO `user_account` (`sn`, `coopID`, `username`, `firstName`, `lastName`, `email`, `password`, `tel`, `user_role`, `regDate`) VALUES
+(20, 418460, 'admin', 'Akorede', 'Ahmad', 'ahmad@articulatetc.com', 'f519df1a76c1b4b33cd446a7d950c7fa', '8054659872', 'Client Officer', '0000-00-00'),
+(21, 418460, 'manager', 'Jude', 'Akingbe', 'aabiola610@gmail.com', '47a526d666615958e23ed3a9f531089d', '08054659872', 'Operation Manager', '0000-00-00'),
+(22, 418460, 'user', 'Akorede', 'Ahmad', 'articulatetc@gmail.com', '4c33e4048817a7f6eff51ca971d58480', '8054659872', 'Admin Officer', '0000-00-00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wihdrawal`
+--
+
+CREATE TABLE `wihdrawal` (
+  `sn` int(11) NOT NULL,
+  `branch` varchar(100) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `oname` varchar(100) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `telephone` varchar(15) NOT NULL,
+  `member_id` varchar(200) NOT NULL,
+  `balance` int(50) NOT NULL,
+  `withdrawal_amount` int(50) NOT NULL,
+  `withdrawal_date` date NOT NULL,
+  `collected_by` varchar(30) NOT NULL,
+  `narration` varchar(1000) NOT NULL,
+  `authorized_by` varchar(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workshop`
+--
+
+CREATE TABLE `workshop` (
+  `sn` int(11) NOT NULL,
+  `coop` varchar(200) NOT NULL,
+  `cat` varchar(100) NOT NULL,
+  `yname` varchar(100) NOT NULL,
+  `addy` varchar(250) NOT NULL,
+  `tel` varchar(15) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `state` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `workshop`
+--
+
+INSERT INTO `workshop` (`sn`, `coop`, `cat`, `yname`, `addy`, `tel`, `email`, `state`) VALUES
+(1, 'Islah MFI', 'Microfinance Bank', 'Ahmad AKorede', 'ganmo', '07054659877', 'abiola610@yahoo.com', ''),
+(2, 'Islah MFI', 'Microfinance Bank', 'Ahmad AKorede', 'ganmo', '07054659877', 'abiola610@yahoo.com', ''),
+(3, 'Islah MFI', 'Microfinance Bank', 'Ahmad AKorede', 'ganmo', '07054659877', 'abiola610@yahoo.com', ''),
+(4, 'Islah MFI', 'Microfinance Bank', 'Ahmad AKorede', 'ganmo', '07054659877', 'abiola610@yahoo.com', ''),
+(5, 'Islah MFI', 'Microfinance Bank', 'Ahmad AKorede', 'ganmo', '07054659877', 'abiola610@yahoo.com', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `accountsetup`
+--
+ALTER TABLE `accountsetup`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `account_type`
+--
+ALTER TABLE `account_type`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `add_staff`
+--
+ALTER TABLE `add_staff`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `audit_log`
+--
+ALTER TABLE `audit_log`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `branch`
+--
+ALTER TABLE `branch`
+  ADD PRIMARY KEY (`bID`);
+
+--
+-- Indexes for table `chart_of_account`
+--
+ALTER TABLE `chart_of_account`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `finance`
+--
+ALTER TABLE `finance`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `groupaccount`
+--
+ALTER TABLE `groupaccount`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `loanapplications`
+--
+ALTER TABLE `loanapplications`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `loanproducts`
+--
+ALTER TABLE `loanproducts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `member_registration`
+--
+ALTER TABLE `member_registration`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `new_loan_product`
+--
+ALTER TABLE `new_loan_product`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `other_income`
+--
+ALTER TABLE `other_income`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `payroll`
+--
+ALTER TABLE `payroll`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `savings`
+--
+ALTER TABLE `savings`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `savingsproduct`
+--
+ALTER TABLE `savingsproduct`
+  ADD PRIMARY KEY (`pid`);
+
+--
+-- Indexes for table `session_log`
+--
+ALTER TABLE `session_log`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `staff`
+--
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `standingorder`
+--
+ALTER TABLE `standingorder`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `teller`
+--
+ALTER TABLE `teller`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `trans_log`
+--
+ALTER TABLE `trans_log`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `user_account`
+--
+ALTER TABLE `user_account`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `wihdrawal`
+--
+ALTER TABLE `wihdrawal`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- Indexes for table `workshop`
+--
+ALTER TABLE `workshop`
+  ADD PRIMARY KEY (`sn`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `accountsetup`
+--
+ALTER TABLE `accountsetup`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `account_type`
+--
+ALTER TABLE `account_type`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `add_staff`
+--
+ALTER TABLE `add_staff`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `audit_log`
+--
+ALTER TABLE `audit_log`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `branch`
+--
+ALTER TABLE `branch`
+  MODIFY `bID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `chart_of_account`
+--
+ALTER TABLE `chart_of_account`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `finance`
+--
+ALTER TABLE `finance`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `groupaccount`
+--
+ALTER TABLE `groupaccount`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `loanapplications`
+--
+ALTER TABLE `loanapplications`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `loanproducts`
+--
+ALTER TABLE `loanproducts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `member_registration`
+--
+ALTER TABLE `member_registration`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
+
+--
+-- AUTO_INCREMENT for table `new_loan_product`
+--
+ALTER TABLE `new_loan_product`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `other_income`
+--
+ALTER TABLE `other_income`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `payroll`
+--
+ALTER TABLE `payroll`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `savings`
+--
+ALTER TABLE `savings`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `savingsproduct`
+--
+ALTER TABLE `savingsproduct`
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `session_log`
+--
+ALTER TABLE `session_log`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `staff`
+--
+ALTER TABLE `staff`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `standingorder`
+--
+ALTER TABLE `standingorder`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `teller`
+--
+ALTER TABLE `teller`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `trans_log`
+--
+ALTER TABLE `trans_log`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user_account`
+--
+ALTER TABLE `user_account`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `wihdrawal`
+--
+ALTER TABLE `wihdrawal`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `workshop`
+--
+ALTER TABLE `workshop`
+  MODIFY `sn` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
